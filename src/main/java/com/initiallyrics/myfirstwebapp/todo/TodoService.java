@@ -16,13 +16,15 @@ public class TodoService {
 
 	// creating static block to store hard coded list.
 	static {
-		todos.add(new TODO(++idCounter, "Initiallyrics", "Learn Java", LocalDate.now().plusMonths(1), false));
-		todos.add(new TODO(++idCounter, "Initiallyrics", "Learn React", LocalDate.now().plusMonths(2), false));
-		todos.add(new TODO(++idCounter, "Initiallyrics", "Learn Full Stack", LocalDate.now().plusMonths(3), false));
+		todos.add(new TODO(++idCounter, "abdul", "Learn Java", LocalDate.now().plusMonths(1), false));
+		todos.add(new TODO(++idCounter, "abdul", "Learn React", LocalDate.now().plusMonths(2), false));
+		todos.add(new TODO(++idCounter, "abdul", "Learn Full Stack", LocalDate.now().plusMonths(3), false));
 	}
 
 	public List<TODO> findByUsername(String username) {
-		return todos;
+		Predicate<TODO> predicate = 
+				todo -> todo.getUsername().equalsIgnoreCase(username);
+		return todos.stream().filter(predicate).toList();
 	}
 
 	//this method is to add new TODO in list

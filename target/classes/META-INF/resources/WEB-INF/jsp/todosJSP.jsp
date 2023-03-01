@@ -14,7 +14,6 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Id</th>
 					<th>Description</th>
 					<th>Target Date</th>
 					<th>Is Completed ?</th>
@@ -25,7 +24,6 @@
 			<tbody>
 				<c:forEach items="${todos}" var="todo">
 					<tr>
-						<td>${todo.id}</td>
 						<td>${todo.description}</td>
 						<td>${todo.expectedDate}</td>
 						<td>${todo.isDone}</td>
