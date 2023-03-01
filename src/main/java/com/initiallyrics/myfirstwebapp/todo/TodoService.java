@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 public class TodoService {
