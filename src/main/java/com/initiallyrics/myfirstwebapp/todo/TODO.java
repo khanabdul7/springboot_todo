@@ -2,10 +2,16 @@ package com.initiallyrics.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
+@Entity
 public class TODO {
 
+	@Id
+	@GeneratedValue
 	private int id;
 	private String username;
 	@Size(min=8, message= "Description should be atleast of 8 characters long!")
@@ -13,6 +19,9 @@ public class TODO {
 	private LocalDate expectedDate;
 	private Boolean isDone;
 
+	public TODO() {
+	}
+	
 	public TODO(int id, String username, String description, LocalDate expectedDate, Boolean isDone) {
 		super();
 		this.id = id;
